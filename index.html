@@ -128,88 +128,159 @@
 
     /* FLOATING CTA */
     .floating-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      padding: 14px 22px;
-      border-radius: 30px;
-      background: #00ffd5;
-      color: black;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(0,255,200,0.5);
-      cursor: pointer;
-      z-index: 999;
-    }
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clarity | Problem Solver</title><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{scroll-behavior:smooth;background:#000;color:#fff;font-family:Poppins, sans-serif;overflow-x:hidden}
 
-    /* ANIMATION */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+/* GLOBAL SECTION */
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  position:relative;
+}
 
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+/* PARALLAX DARK BACKGROUNDS */
+.bg1{background:url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1920') center/cover fixed}
+.bg2{background:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920') center/cover fixed}
+.bg3{background:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1920') center/cover fixed}
+.bg4{background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920') center/cover fixed}
+.bg5{background:url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1920') center/cover fixed}
 
-      .hero-content {
-        padding: 25px;
-      }
+/* DARK OVERLAY */
+section::before{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:linear-gradient(to bottom,rgba(0,0,0,.7),rgba(0,0,0,.9));
+}
 
-      .content-box {
-        padding: 25px;
-      }
-    }
-  </style></head><body>  <!-- HERO -->  <section class="hero">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="hlpinangel/km_20260207_720p_30f_20260207_150947.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div><div class="hero-content">
-  <h1>Stuck in Life?</h1>
-  <p>I break down your situation and give you a clear direction forward. Not AI. Real human thinking.</p>
+/* HERO TEXT CONTAINER */
+.box{
+ position:relative;
+ max-width:900px;
+ padding:60px 50px;
+ background:rgba(255,255,255,0.04);
+ backdrop-filter:blur(14px);
+ border-radius:20px;
+ box-shadow:0 30px 80px rgba(0,0,0,.8);
+ opacity:0;
+ transform:translateY(60px);
+ transition:1s;
+}
+.box.show{opacity:1;transform:translateY(0)}
+
+/* TEXT */
+h1{
+ font-family:Orbitron,sans-serif;
+ font-size:3.2rem;
+ margin-bottom:20px;
+ letter-spacing:2px;
+}
+
+h2{font-size:2.2rem;margin-bottom:20px}
+p{font-size:1.15rem;line-height:1.8;opacity:.9}
+
+/* BUTTON */
+.btn{
+ margin-top:30px;
+ padding:18px 45px;
+ font-size:1.1rem;
+ border:none;
+ border-radius:40px;
+ background:linear-gradient(45deg,#00ffd5,#008cff);
+ color:#000;
+ font-weight:600;
+ cursor:pointer;
+ transition:.4s;
+ box-shadow:0 10px 40px rgba(0,255,200,.5);
+}
+.btn:hover{transform:scale(1.08)}
+
+/* FLOAT BUTTON */
+.float{
+ position:fixed;
+ right:25px;
+ bottom:25px;
+ background:#00ffd5;
+ color:#000;
+ padding:15px 22px;
+ border-radius:30px;
+ font-weight:600;
+ cursor:pointer;
+ z-index:999;
+ box-shadow:0 10px 30px rgba(0,255,200,.6);
+}
+
+/* TYPING TEXT */
+.typing{
+ font-size:1.4rem;
+ color:#00ffd5;
+ margin-top:15px;
+ height:30px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+ h1{font-size:2rem}
+ .box{padding:30px 20px}
+}
+</style></head><body><!-- HERO --><section class="bg1">
+<div class="box">
+<h1>YOU FEEL STUCK</h1>
+<div class="typing" id="typing"></div>
+<p>Not lazy. Not broken. Just unclear. I help you see what to do next.</p>
 </div>
+</section><section class="bg2">
+<div class="box">
+<h2>Not Advice. Real Direction.</h2>
+<p>I analyze your situation deeply and give you a focused next step — something AI cannot truly understand.</p>
+</div>
+</section><section class="bg3">
+<div class="box">
+<h2>For People Who Overthink</h2>
+<p>Career confusion. Life stuck. No clarity. Too many thoughts. This is where clarity begins.</p>
+</div>
+</section><section class="bg4">
+<div class="box">
+<h2>Simple Process</h2>
+<p>You submit your situation. I break it down. You receive a clear direction within hours.</p>
+</div>
+</section><section class="bg5">
+<div class="box">
+<h2>Start Now</h2>
+<p>Clarity changes everything.</p>
+<button class="btn" onclick="window.location.href='YOUR_GOOGLE_FORM_LINK'">Get Direction</button>
+</div>
+</section><div class="float" onclick="window.location.href='YOUR_GOOGLE_FORM_LINK'">Start</div><script>
+/* SCROLL ANIMATION */
+const obs=new IntersectionObserver(e=>{
+ e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show')}})
+});
+document.querySelectorAll('.box').forEach(el=>obs.observe(el));
 
-  </section>  <!-- SECTION 2 -->  <section class="content-section">
-    <div class="content-box">
-      <h2>What I Do</h2>
-      <p>I analyze your real problem, identify what’s blocking you, and give a focused direction you can act on immediately.</p>
-    </div>
-  </section>  <!-- SECTION 3 -->  <section class="content-section">
-    <div class="content-box">
-      <h2>Who This Is For</h2>
-      <p>People who feel stuck, lost, overthinking, career-confused, mentally drained, or unsure about their next step.</p>
-    </div>
-  </section>  <!-- SECTION 4 -->  <section class="content-section">
-    <div class="content-box">
-      <h2>How It Works</h2>
-      <p>You submit your situation. I analyze it. You receive a clear direction and the next steps to move forward.</p>
-    </div>
-  </section>  <!-- BOOK -->  <section class="content-section">
-    <div class="content-box">
-      <h2>Ready to Move Forward?</h2>
-      <p>Submit your problem and get a clear direction.</p>
-      <button class="book-btn" onclick="window.location.href='YOUR_GOOGLE_FORM_LINK'">
-        Book Now
-      </button>
-    </div>
-  </section>  <div class="floating-btn" onclick="window.location.href='YOUR_GOOGLE_FORM_LINK'">
-    Book Now
-  </div>  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    });
-
-    document.querySelectorAll('.content-box').forEach(el => observer.observe(el));
-  </script></body>
+/* TYPING EFFECT */
+const words=["Overthinking...","Career confusion...","Life stuck...","No direction..."];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+ current=words[i];
+ if(!isDeleting){
+  document.getElementById("typing").textContent=current.substring(0,j++);
+  if(j>current.length){isDeleting=true;setTimeout(type,1200);return}
+ }
+ else{
+  document.getElementById("typing").textContent=current.substring(0,j--);
+  if(j<0){isDeleting=false;i=(i+1)%words.length}
+ }
+ setTimeout(type,isDeleting?40:80);
+}
+type();
+</script></body>
 </html>
